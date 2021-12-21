@@ -53,9 +53,13 @@ namespace OneStreamWebUI.Mvvm.WeakEventListener
         protected void HandleEvent(object sender, TArgs e)
         {
             if (handler.TryGetTarget(out var handlerOut))
-                handlerOut((T) sender, e);
+            {
+                handlerOut((T)sender, e);
+            }
             else
+            {
                 StopListening();
+            }
         }
 
         protected abstract void StopListening(T source);

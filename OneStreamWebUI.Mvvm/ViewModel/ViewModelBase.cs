@@ -15,14 +15,17 @@ namespace OneStreamWebUI.Mvvm.ViewModel
         private readonly Dictionary<string, List<Func<object, Task>>> subscriptions = new();
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private int noStateChanged = 1;
-
-        protected bool Set<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
+        protected bool Set<T>(ref T field, T value, [CallerMemberName] string? propertyName = null, bool runStateHasChanged = true)
         {
             if (!EqualityComparer<T>.Default.Equals(field, value))
             {
                 field = value;
-                OnPropertyChanged(propertyName!);
+
+                if (runStateHasChanged)
+                {
+                    OnPropertyChanged(propertyName!);
+                }
+                
                 if (!subscriptions.ContainsKey(propertyName!))
                 {
                     return true;
@@ -35,7 +38,7 @@ namespace OneStreamWebUI.Mvvm.ViewModel
             }
             return false;
         }
-
+        
         public virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -91,7 +94,7 @@ namespace OneStreamWebUI.Mvvm.ViewModel
 
         protected void StateHasChanged()
         {
-            Console.WriteLine($"StateHasChanged - ViewModelBase [{noStateChanged++}]");
+            Console.WriteLine($"StateHasChanged - ViewModelBase");
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(null));
         }
 

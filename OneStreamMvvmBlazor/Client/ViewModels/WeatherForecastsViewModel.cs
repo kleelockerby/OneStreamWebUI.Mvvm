@@ -42,6 +42,7 @@ namespace OneStreamMvvmBlazor.Client
                 weatherForecastEntity.TemperatureC = random.Next(10, 40);
                 weatherForecastEntity.TemperatureF = random.Next(50, 200);
             }
+            StateHasChanged();
         }
     }
 }

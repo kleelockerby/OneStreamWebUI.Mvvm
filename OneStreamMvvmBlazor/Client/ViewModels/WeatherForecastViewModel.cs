@@ -23,13 +23,13 @@ namespace OneStreamMvvmBlazor.Client
         public int TemperatureC
         {
             get => _temperatureC;
-            set => Set(ref _temperatureC, value, nameof(TemperatureC));
+            set => Set(ref _temperatureC, value, nameof(TemperatureC), false);
         }
 
         public int TemperatureF
         {
             get => _temperatureF;
-            set => Set(ref _temperatureF, value, nameof(TemperatureF));
+            set => Set(ref _temperatureF, value, nameof(TemperatureF), false);
         }
     }
 }
