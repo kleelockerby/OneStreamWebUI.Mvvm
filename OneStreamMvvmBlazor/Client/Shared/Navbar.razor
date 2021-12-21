@@ -1,0 +1,38 @@
+﻿@inherits MvvmComponentBase<NavbarViewModel>
+	
+<div class="page">
+    <div class="sidebar">
+        <div class="top-row pl-4 navbar navbar-dark">
+            <a class="navbar-brand" href="">BlazorMVVM Bootstrap</a>
+        </div>
+
+        <div>
+            <ul class="nav flex-column">
+                @foreach (var item in Bind(x => x.NavbarItems))
+                {
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="@item.Template">
+                            <span class="oi @item.Icon" aria-hidden="true"></span> @item.DisplayName
+                        </NavLink>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="top-row px-4">
+            <a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>
+        </div>
+        <div class="content-container">
+            @ChildContent
+        </div>
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+}
