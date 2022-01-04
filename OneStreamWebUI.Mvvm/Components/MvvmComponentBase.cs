@@ -66,7 +66,7 @@ namespace OneStreamWebUI.Mvvm.Components
 
         internal virtual void BindingOnBindingValueChanged(object sender, EventArgs e)
         {
-            Console.WriteLine($"StateHasChanged - MvvmComponentBase [{noStateChanged++}]");
+            //Console.WriteLine($"StateHasChanged - MvvmComponentBase [{noStateChanged++}]");
             InvokeAsync(StateHasChanged);
         }
 
