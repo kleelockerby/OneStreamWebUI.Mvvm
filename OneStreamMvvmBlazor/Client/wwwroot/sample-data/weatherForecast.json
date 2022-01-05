@@ -1,0 +1,27 @@
+﻿[
+  {
+    "date": "2018-05-06",
+    "temperatureC": -12,
+    "summary": "F*#&ing Cold"
+  },
+  {
+    "date": "2018-05-07",
+    "temperatureC": 34,
+    "summary": "Balmy"
+  },
+  {
+    "date": "2018-05-08",
+    "temperatureC": 27,
+    "summary": "Perfect"
+  },
+  {
+    "date": "2018-05-09",
+    "temperatureC": -16,
+    "summary": "Balmy"
+  },
+  {
+    "date": "2018-05-10",
+    "temperatureC": -2,
+    "summary": "Chilly"
+  }
+]
