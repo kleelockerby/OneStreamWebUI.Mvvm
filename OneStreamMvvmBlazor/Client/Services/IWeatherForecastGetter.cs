@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using OneStreamMvvmBlazor.Shared;
 
-namespace OneStreamMvvmBlazor.Client
+namespace OneStreamMvvmBlazor.Client.Services
 {
     public interface IWeatherForecastGetter
     {

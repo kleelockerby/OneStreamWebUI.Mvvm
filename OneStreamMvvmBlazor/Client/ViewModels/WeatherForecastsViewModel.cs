@@ -29,7 +29,7 @@ namespace OneStreamMvvmBlazor.Client
             // Simulate loading time
             await Task.Delay(1500);
 
-            var forecastData = await _weatherForecastGetter.GetForecasts();
+            IEnumerable<WeatherForecastEntity> forecastData = await _weatherForecastGetter.GetForecasts();
             _forecasts = new ObservableCollection<WeatherForecastViewModel>(forecastData.Select(x => new WeatherForecastViewModel(x)));
         }
 
