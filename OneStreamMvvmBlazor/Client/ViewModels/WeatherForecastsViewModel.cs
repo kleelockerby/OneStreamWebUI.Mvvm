@@ -11,7 +11,7 @@ namespace OneStreamMvvmBlazor.Client
     {
         private readonly IWeatherForecastGetter _weatherForecastGetter;
 
-        private ObservableCollection<WeatherForecastViewModel>? _forecasts;
+        private ObservableCollection<WeatherForecastViewModel> _forecasts;
 
         public WeatherForecastsViewModel(IWeatherForecastGetter weatherForecastGetter)
         {

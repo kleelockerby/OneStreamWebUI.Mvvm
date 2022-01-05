@@ -1,5 +1,7 @@
-﻿
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.Http.Json;
+using System.Threading.Tasks;
 using OneStreamMvvmBlazor.Shared;
 
 namespace OneStreamMvvmBlazor.Client
@@ -13,7 +15,7 @@ namespace OneStreamMvvmBlazor.Client
             _httpClient = httpClient;
         }
 
-        public Task<IEnumerable<WeatherForecastEntity>> GetForecasts()
+        public Task<IEnumerable<WeatherForecastEntity>?> GetForecasts()
         {
             return _httpClient.GetFromJsonAsync<IEnumerable<WeatherForecastEntity>>("WeatherForecast");
         }

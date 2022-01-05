@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using OneStreamMvvmBlazor.Shared;
 
-namespace OneStreamMvvmBlazor.Client.Services
+namespace OneStreamMvvmBlazor.Client
 {
     public interface IWeatherForecastGetter
     {
-        Task<IEnumerable<WeatherForecastEntity>> GetForecasts();
+        Task<IEnumerable<WeatherForecastEntity>?> GetForecasts();
     }
 }
